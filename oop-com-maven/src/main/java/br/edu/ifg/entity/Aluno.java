@@ -1,10 +1,8 @@
-package br.edu.ifg;
+package br.edu.ifg.entity;
 
 import java.time.LocalDate;
 
 public class Aluno {
-	
-	//matricula, nome, data_nascimento, sexo
 	
 	private Long id;
 	private String matricula;
@@ -12,7 +10,9 @@ public class Aluno {
 	private LocalDate dataNascimento;
 	private String sexo;
 	
-	
+	public Aluno() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Aluno(Long id, String matricula, String nome, LocalDate dataNascimento, String sexo) {
 		super();
@@ -45,4 +45,5 @@ public class Aluno {
 	public Long getId() {
 		return id;
 	}
+	
 }

@@ -1,4 +1,4 @@
-package br.edu.ifg;
+package br.edu.ifg.persistence;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
