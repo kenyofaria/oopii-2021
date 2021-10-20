@@ -58,4 +58,11 @@ public class Turma {
 		this.alunos = alunos;
 	}
 	
+	
+	public void matriculaAluno(Aluno aluno) {
+		if(this.alunos.contains(aluno)) {
+			throw new RuntimeException("aluno já matriculado nesta turma");
+		}
+		this.alunos.add(aluno);
+	}
 }
