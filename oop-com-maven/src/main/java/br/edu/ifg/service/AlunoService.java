@@ -2,6 +2,7 @@ package br.edu.ifg.service;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Iterator;
 import java.util.List;
 
 import br.edu.ifg.entity.Aluno;
@@ -42,7 +43,38 @@ public class AlunoService {
 	}
 	
 	public Aluno carregaAluno(Long id) {
-		return this.alunoDAO.carregar(id);
+		return this.alunoDAO.get(id);
 	}
 	
+	public List<Aluno> carregaAlunos(){
+		return this.alunoDAO.list();
+	}
+	
+	
+	public static void main(String[] args) {
+		AlunoService alunoService = new AlunoService();
+		List<Aluno> listaDeAlunos = alunoService.carregaAlunos();
+		
+		System.out.println("--------------------- iterando da forma convencional ---------------------");
+		for(int i=0; i<listaDeAlunos.size(); i++) {
+			System.out.println(listaDeAlunos.get(i).getNome());
+		}
+		
+		System.out.println("\n\n\n--------------------- iterando com iterator ---------------------");
+		Iterator<Aluno> iterator = listaDeAlunos.iterator();
+		while(iterator.hasNext()) {
+			Aluno aluno = iterator.next();
+			if(aluno.getNome().equalsIgnoreCase("jean"))
+				listaDeAlunos.remove(iterator);
+			else System.out.println(aluno.getNome());
+		}
+		
+		System.out.println("\n\n\n--------------------- iterando com foreach ---------------------");
+		for (Aluno aluno : listaDeAlunos) {
+			System.out.println(aluno.getNome());
+		}
+		
+		System.out.println("\n\n\n--------------------- iterando com lambda ---------------------");
+		listaDeAlunos.forEach(aluno -> System.out.println(aluno.getNome()));
+	}
 }

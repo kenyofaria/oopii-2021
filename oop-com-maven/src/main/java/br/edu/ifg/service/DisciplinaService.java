@@ -40,10 +40,10 @@ public class DisciplinaService {
 		 }
 			 
 		 turma.matriculaAluno(aluno);
-		 turmaDAO.atualiza(turma);
+		 turmaDAO.atualizar(turma);
 	}
 	
 	public Disciplina carregaDisciplina(String nome) {
-		return this.disciplinaDAO.carrega(nome);
+		return this.disciplinaDAO.get(nome);
 	}
 }
