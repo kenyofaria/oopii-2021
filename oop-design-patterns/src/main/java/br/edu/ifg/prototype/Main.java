@@ -10,10 +10,11 @@ public class Main {
 		List<Shape> shapes = new ArrayList<Shape>();
 		List<Shape> shapesCopy = new ArrayList<Shape>();
 		
-		Shape r1 = new Rectangle().arrowA(2).arrowA(1).build();
-		Shape r2 = new Rectangle().arrowA(3).arrowA(1).build();
-		Square s1 = new Square().arrow(2).build();
-		Square s2 = new Square().arrow(3).build();
+		Shape r1 = new Rectangle().arrowA(2).arrowB(1).build();
+		Shape r2 = new Rectangle().arrowA(3).arrowB(1).build();
+		
+		Shape s1 = new Square().arrow(2).build();
+		Shape s2 = new Square().arrow(3).build();
 		
 		shapes = Arrays.asList(r1, s1, r2, s2);
 		
